@@ -36,7 +36,7 @@ def construct_prompt(source_name, source_code, target_name, target_code, user_te
         f"while adhering to {target_name} grammar, vocabulary, and cultural sensitivities. "
         f"Produce only the {target_name} translation, without any additional explanations or commentary. "
         f"Please translate the following {source_name} text into {target_name}:"
-        "\n\n\n"  # Two blank lines (three newlines) as requested in the image
+        "\n\n\n"  # Two blank lines (three newlines) as requested
         f"{user_text}"
     )
     return template
