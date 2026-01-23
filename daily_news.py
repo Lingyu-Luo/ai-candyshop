@@ -7,7 +7,7 @@ import datetime
 # 请确保环境变量中有 SILICONFLOW_API_KEY，或者直接填在这里
 API_KEY = os.getenv("SILICONFLOW_API_KEY")
 BASE_URL = "https://api.siliconflow.cn/v1/chat/completions"
-MODEL_NAME = "deepseek-ai/DeepSeek-V3.2"
+MODEL_NAME = "Pro/deepseek-ai/DeepSeek-V3.2"
 KEYWORDS = ["LLM", "Transformer", "GPT", "Claude", "Gemini", "DeepSeek",
             "RAG", "Agent", "Diffusion", "Quantization", "MoE"]
 
