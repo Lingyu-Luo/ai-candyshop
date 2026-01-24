@@ -18,6 +18,8 @@ venv/
 
 # Local app data
 DailyNews/
+temp.md
+output.md
 
 # Editors
 .vscode/
