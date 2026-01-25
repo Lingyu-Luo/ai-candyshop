@@ -13,6 +13,10 @@ Welcome to the **AI Candy Shop**. This repository houses a variety of lightweigh
 Here is what's currently on the shelf. Pick your flavor:
 
 ### 🆕 Freshly Baked
+- **`research_exa.py`** (The Deep Research Scout)
+  A Streamlit-powered deep research assistant that leverages Exa API for academic search (arXiv, Nature, IEEE, ACM) and AI-driven multi-step analysis. Features configurable research depth, real-time streaming output, and automatic report generation.
+
+### 📄 Document Processing
 - **`pdf2md.py`** (The Document Cruncher)  
   A handy utility to convert dense PDF documents into clean, readable Markdown files. Perfect for feeding papers into LLMs.
 
