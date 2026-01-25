@@ -33,6 +33,9 @@ Here is what's currently on the shelf. Pick your flavor:
 Just run the script you need directly with Python:
 
 ```bash
+# Start the Deep Research (Streamlit App)
+streamlit run research_exa.py
+
 # Convert a PDF
 python pdf2md.py input_paper.pdf
 
