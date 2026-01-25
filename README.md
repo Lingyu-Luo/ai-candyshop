@@ -43,4 +43,4 @@ This project is licensed under the MIT License - feel free to taste, fork, and m
 
 ---
 
-*Created by [Lingyu Luo*](https://github.com/Lingyu-Luo)
+*Created by [Lingyu Luo](https://github.com/Lingyu-Luo)*
