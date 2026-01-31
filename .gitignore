@@ -18,6 +18,7 @@ venv/
 
 # Local app data
 DailyNews/
+ChatHistory/
 temp.md
 output.md
 AI Review.md

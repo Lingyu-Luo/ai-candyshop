@@ -229,12 +229,12 @@ def stream_review(content, model, output_path):
 
 
 def main():
-    argparser = argparse.ArgumentParser(description="AI Code Reviewer - 智能代码审查工具")
-    argparser.add_argument("path", type=str, help="代码路径 (文件/文件夹/GitHub URL)")
-    argparser.add_argument("-o", "--output", default="AI Review.md", type=str, help="审查报告输出路径")
-    argparser.add_argument("-m", "--model", default=default_model, type=str, help=f"使用的模型 (默认: {default_model})")
+    parser = argparse.ArgumentParser(description="AI Code Reviewer - 智能代码审查工具")
+    parser.add_argument("path", type=str, help="代码路径 (文件/文件夹/GitHub URL)")
+    parser.add_argument("-o", "--output", default="AI Review.md", type=str, help="审查报告输出路径")
+    parser.add_argument("-m", "--model", default=default_model, type=str, help=f"使用的模型 (默认: {default_model})")
     
-    args = argparser.parse_args()
+    args = parser.parse_args()
     
     # 检查 API Key
     if not os.getenv('SILICONFLOW_API_KEY'):

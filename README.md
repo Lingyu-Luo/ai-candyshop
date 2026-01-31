@@ -21,11 +21,18 @@ Here is what's currently on the shelf. Pick your flavor:
 | **`thinking_ReAct.py`** | ReAct agent with search + visit tools. Leverages DeepSeek's thinking capabilities for reasoning-intensive tasks with real-time thought visualization. |
 | **`code_reviewer.py`** | AI-powered code review tool. Analyzes files, directories, or GitHub repos and generates detailed Markdown reports. |
 
+### 💬 Chat & Interface
+
+| Script | Description |
+|--------|-------------|
+| **`GUI_openai_compatible.py`** | Streamlit chat interface with multimodal support (images & audio). Features conversation history, reasoning visualization, and LaTeX rendering. Works with Gemini API. |
+
 ### 📄 Document Processing
 
 | Script | Description |
 |--------|-------------|
 | **`pdf2md.py`** | Converts PDF documents to clean Markdown using VLM (GLM-4.6V) for OCR and LLM (DeepSeek-V3) for post-processing. Handles LaTeX formulas and tables. |
+| **`merge_codebase_context.py`** | Merges entire codebases into a single text file for AI context. Supports local folders and GitHub URLs with smart filtering. |
 
 ### 🗞️ Information & Media
 
@@ -45,6 +52,7 @@ Here is what's currently on the shelf. Pick your flavor:
 - API Keys (set as environment variables):
   - `SILICONFLOW_API_KEY` - For DeepSeek/GLM models
   - `EXA_API_KEY` - For Exa search (research scripts)
+  - `GEMINI_API_KEY` - For Gemini models (GUI chat)
 - [Ollama](https://ollama.ai/) - For local model inference (translategemma)
 
 ## 👩‍🍳 Usage
@@ -53,12 +61,19 @@ Here is what's currently on the shelf. Pick your flavor:
 # Deep Research (Streamlit App)
 streamlit run research_exa.py
 
+# Multimodal Chat Interface
+streamlit run GUI_openai_compatible.py
+
 # ReAct Agent with thinking
 python thinking_ReAct.py
 
 # Code Review (file, folder, or GitHub URL)
 python code_reviewer.py ./my_project -o review.md
 python code_reviewer.py https://github.com/user/repo
+
+# Merge codebase for AI context
+python merge_codebase_context.py ./my_project -o context.txt
+python merge_codebase_context.py https://github.com/user/repo
 
 # PDF to Markdown
 python pdf2md.py
@@ -78,6 +93,8 @@ streamlit run translategemma.py
 | `daily_news.py` | `./DailyNews/` |
 | `code_reviewer.py` | `./AI Review.md` (configurable) |
 | `pdf2md.py` | `./output.md` + `./raw.md` |
+| `merge_codebase_context.py` | `./context.txt` (configurable) |
+| `GUI_openai_compatible.py` | `./ChatHistory/` |
 
 ## 📜 License
 
