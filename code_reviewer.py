@@ -143,17 +143,18 @@ def read_content(path):
     """根据路径类型读取内容"""
     is_temp = False
     source_path = path
+    temp_dir = None
     
     # 检查是否为 GitHub URL
     if path.startswith("http://") or path.startswith("https://"):
         source_path = clone_repo(path)
         is_temp = True
         if not source_path:
-            return None, False
+            return None, False, None
     
     if not os.path.exists(source_path):
         print(f"错误: 路径 '{source_path}' 不存在。")
-        return None, is_temp
+        return None, is_temp, temp_dir
     
     # 判断是文件还是目录
     if os.path.isfile(source_path):
@@ -161,7 +162,7 @@ def read_content(path):
     else:
         content = read_directory(source_path)
     
-    return content, is_temp
+    return content, is_temp, temp_dir
 
 
 def stream_review(content, model, output_path):
@@ -247,8 +248,7 @@ def main():
     print()
     
     # 读取代码内容
-    content, is_temp = read_content(args.path)
-    temp_dir = args.path if is_temp else None
+    content, is_temp, temp_dir = read_content(args.path)
     
     if not content:
         print("❌ 无法读取代码内容")
@@ -259,9 +259,9 @@ def main():
         stream_review(content, args.model, args.output)
     finally:
         # 清理临时目录
-        if is_temp and temp_dir and args.path.startswith("http"):
-            # 需要从 read_content 返回临时目录路径
-            pass
+        if is_temp and temp_dir and os.path.exists(temp_dir):
+            print("清理临时文件...")
+            shutil.rmtree(temp_dir, ignore_errors=True)
 
 
 if __name__ == "__main__":
